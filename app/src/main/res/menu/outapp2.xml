@@ -1,0 +1,24 @@
+<!-- navigation_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/deleter"
+            android:contentDescription="Out"
+            android:icon="@drawable/deleter"
+            android:title="Deleter"
+            app:showAsAction="always" />
+
+        <item
+            android:id="@+id/outAPP"
+            android:contentDescription="Out"
+            android:icon="@drawable/logout_24"
+            android:title="Home"
+            app:showAsAction="always" />
+
+    </group>
+
+
+</menu>

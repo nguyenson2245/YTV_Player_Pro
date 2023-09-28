@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:background="#FFFFFF"
+              tools:context=".activity2file.SplashScreen">
+
+    <ImageView
+        android:layout_marginTop="25dp"
+        android:id="@+id/imgLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logoo"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:id="@+id/textViewLoGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ITV PLAYER PRO"
+        android:textColor="#521D5F"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed-medium" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:layout_marginBottom="10dp"
+        android:textColor="#808080"
+        android:textSize="16sp" />
+
+</LinearLayout>

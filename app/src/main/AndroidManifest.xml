@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="YTV PRO"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.YTV_Player_Pro"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".activity2file.PDfViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity2file.IntroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity2file.SecondScreen"
+            android:exported="false" />
+        <activity
+            android:name=".activity2file.MainActivity_File"
+            android:exported="false"
+            android:label="File"
+            android:parentActivityName=".activity.MainActivityChinh"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".activity.VideoActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:screenOrientation="sensor" />
+        <activity
+            android:name=".activity.UpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddActivity"
+            android:exported="false"
+            android:label="ADD"
+            android:parentActivityName=".activity.ShowDLActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".activity.ShowDLActivity"
+            android:exported="false"
+            android:label="YTV PRO"
+            android:parentActivityName=".activity.MainActivityChinh"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:ignore="WrongManifestParent">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".activity.MainActivityChinh"
+            android:exported="false" />
+        <activity
+            android:name=".activity2file.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

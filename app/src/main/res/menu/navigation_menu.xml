@@ -1,0 +1,35 @@
+<!-- navigation_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/baseline_home_24"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/rate_us"
+            android:icon="@drawable/baseline_star_rate_24"
+            android:title="Rate us" />
+
+        <item
+            android:id="@+id/shareApp"
+            android:icon="@drawable/share"
+            android:title="Share App" />
+
+        <item
+            android:id="@+id/privacyPoloicy"
+            android:icon="@drawable/privacy"
+            android:title="Privacy Poloicy" />
+
+        <item
+            android:id="@+id/contactUs"
+            android:icon="@drawable/contact"
+            android:title="Contact Us" />
+
+    </group>
+
+
+
+</menu>

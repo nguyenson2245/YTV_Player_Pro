@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/search_m"
+        android:icon="@drawable/search"
+        android:title="Search"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/sapxep"
+        android:icon="@drawable/sapxep"
+        android:title="sapxep"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/sx_name"
+                android:icon="@drawable/sapxep"
+                android:title="name" />
+            <item
+                android:id="@+id/sx_Modified"
+                android:icon="@drawable/sapxep"
+                android:title="Modified" />
+            <item
+                android:id="@+id/sx_Size"
+                android:icon="@drawable/sapxep"
+                android:title="Size" />
+        </menu>
+    </item>
+
+</menu>
