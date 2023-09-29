@@ -47,9 +47,7 @@ class Contact_Fragment : Fragment() {
             intent.setType("message/rfc822")
             startActivity(intent)
         }
-
         return view
-
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
