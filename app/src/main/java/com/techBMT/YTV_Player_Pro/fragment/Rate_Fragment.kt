@@ -34,6 +34,7 @@ class Rate_Fragment : Fragment() {
         return view
     }
 
+
     private fun openAppRating() {
         val packageName = requireContext().packageName
         val marketUri = Uri.parse("market://details?id=$packageName")

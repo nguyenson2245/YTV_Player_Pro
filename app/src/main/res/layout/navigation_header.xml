@@ -18,6 +18,4 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/jdbsndbskd" />
 
-
-
 </LinearLayout>

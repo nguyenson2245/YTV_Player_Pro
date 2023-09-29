@@ -143,6 +143,7 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
 //
 //        }
 
+
 //        if (backPressedTime + 1500 > System.currentTimeMillis()) {
 //            super.onBackPressed()
 //            toast.cancel()
