@@ -24,7 +24,7 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     lateinit var binding: ActivityMainChinhBinding
     private var backPressedTime: Long = 0
-    lateinit var toast: Toast
+    private var toatm: Toast? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,8 +97,6 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     private fun replaceFragment(fragment: Fragment) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
-//        fragmentManager.popBackStack()
-
         fragmentTransaction.replace(R.id.frame_layout, fragment)
         val backStackEntryCount = supportFragmentManager.backStackEntryCount
         Log.d("TAG", "replaceFragment: $backStackEntryCount")
@@ -143,13 +141,13 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
             if (backStackEntryCount >= 2) {
                 super.onBackPressed()
             } else if (backPressedTime + 2000 > System.currentTimeMillis()) {
+                toatm?.cancel()
                 super.onBackPressed()
                 finish()
                 return
             } else {
-                Toast.makeText(this, "Press back again to exit the application", Toast.LENGTH_SHORT)
-                    .show()
-                toast.show()
+                Toast.makeText(this, "Press back again to exit the application", Toast.LENGTH_SHORT).show()
+                toatm?.show()
             }
             backPressedTime = System.currentTimeMillis()
         }
