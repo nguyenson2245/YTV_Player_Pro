@@ -64,4 +64,9 @@ class Contact_Fragment : Fragment() {
         }
         return super.onContextItemSelected(item)
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
+
 }

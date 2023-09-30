@@ -3,6 +3,7 @@ package com.techBMT.YTV_Player_Pro.activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -27,23 +28,20 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainChinhBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ToolBar_()
         Navigationview_()
         binding.navigationView.setNavigationItemSelectedListener(this)
-        binding.navigationView.getMenu().findItem(R.id.home).setChecked(true)
+        binding.navigationView.menu.findItem(R.id.home).isChecked = true
+
         replaceFragment(Home_Fragment())
     }
 
-
     private fun Navigationview_() {
         val toggle = ActionBarDrawerToggle(
-            this,
-            binding.drawerLayout,
-            binding.toolBar,
+            this, binding.drawerLayout, binding.toolBar,
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
@@ -51,7 +49,6 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
         toggle.setDrawerIndicatorEnabled(true)
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-
         binding.navigationView.setNavigationItemSelectedListener(this)
     }
 
@@ -95,13 +92,19 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
             replaceFragment(Contact_Fragment())
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
-
         return true
     }
 
     private fun replaceFragment(fragment: Fragment) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
+//        fragmentManager.popBackStack()
+
         fragmentTransaction.replace(R.id.frame_layout, fragment)
+        val backStackEntryCount = supportFragmentManager.backStackEntryCount
+        Log.d("TAG", "replaceFragment: $backStackEntryCount")
+        for (i in 1 until backStackEntryCount) {
+            supportFragmentManager.popBackStack()
+        }
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }
@@ -109,7 +112,6 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
     private fun shareApp() {
         val packageName = packageName
         val message = "Try This App !"
-
         val shareIntent = ShareCompat.IntentBuilder.from(this)
             .setType("text/plain")
             .setText(message)
@@ -132,35 +134,26 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
     }
 
     override fun onBackPressed() {
-//        val fragmentManager = supportFragmentManager
-//        val fragment = fragmentManager.findFragmentById(R.id.frame_layout)
-//        if (fragmentManager.backStackEntryCount > 0) {
-//            fragmentManager.popBackStack()
-//
-//        } else if (fragmentManager.backStackEntryCount <= 0) {
-//            finish()
-//            super.onBackPressed()
-//
-//        }
-
-
-//        if (backPressedTime + 1500 > System.currentTimeMillis()) {
-//            super.onBackPressed()
-//            toast.cancel()
-//            return
-//        } else {
-//            Toast.makeText(this, "Press back again to exit the application", Toast.LENGTH_SHORT)
-//                .show()
-//            toast.show()
-//        }
-//        backPressedTime = System.currentTimeMillis()
-//
-
+        Log.d("TAG", "onBackPressed: ")
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
-            super.onBackPressed()
+            val backStackEntryCount = supportFragmentManager.backStackEntryCount
+            Log.d("TAG", "onBackPressed:$backStackEntryCount ")
+            if (backStackEntryCount >= 2) {
+                super.onBackPressed()
+            } else if (backPressedTime + 2000 > System.currentTimeMillis()) {
+                super.onBackPressed()
+                finish()
+                return
+            } else {
+                Toast.makeText(this, "Press back again to exit the application", Toast.LENGTH_SHORT)
+                    .show()
+                toast.show()
+            }
+            backPressedTime = System.currentTimeMillis()
         }
+
     }
 
 }

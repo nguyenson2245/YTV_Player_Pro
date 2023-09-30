@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -62,6 +63,21 @@ class Rate_Fragment : Fragment() {
             return true
         }
         return super.onContextItemSelected(item)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.d("TAGRate", "onDestroyViewRate: ")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("TAGRate", "onDestroyRate: ")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("TAGRate", "onPauseViewRate: ")
     }
 
 }
