@@ -12,7 +12,6 @@ public class SharedPref {
         return context.getSharedPreferences(SHOP_SHARED_PREFERENCES, Context.MODE_PRIVATE);
     }
 
-
     public static void setFirstOpenApp(boolean isFirst,Context context) {
         saveValueToKey(context, FIRST_OPEN_APP, isFirst);
     }

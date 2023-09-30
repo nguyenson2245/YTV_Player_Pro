@@ -68,47 +68,16 @@ public class SecondScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    private void clickRequsetPermission() {
-//        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-//            return;
-//        }
-//
-//        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
-//                checkSelfPermission(Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED
-//        ) {
-//            Toast.makeText(this, "ĐÃ cấp", Toast.LENGTH_SHORT).show();
-//        } else {
-//            String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.CALL_PHONE};
-//            requestPermissions(permission, REQUEST_PERMISSION_CODE);
-//        }
-//    }
-
-//    @SuppressLint("MissingSuperCall")
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//
-//        if (requestCode == REQUEST_PERMISSION_CODE) {
-//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
-//                    &&grantResults[1] == PackageManager.PERMISSION_GRANTED
-//            ) {
-//                Toast.makeText(this, "ĐÃ cấp", Toast.LENGTH_SHORT).show();
-//            } else {
-//                Toast.makeText(this, "từ chối", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//    }
-
     private void requestPermissionFromLibrary(){
         TedPermission.with(this)
                 .setPermissionListener(new PermissionListener() {
                     @Override
-                    public void onPermissionGranted() {  // cho phép sd quyền
+                    public void onPermissionGranted() {
                         Toast.makeText(SecondScreen.this, "ĐÃ cấp", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onPermissionDenied(List<String> deniedPermissions) { // khi từ chối
-//                        Toast.makeText(SecondScreen.this, "Khong được cấp", Toast.LENGTH_SHORT).show();
                     }
                 }).setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.MANAGE_EXTERNAL_STORAGE)
                 .setDeniedTitle("Open Setting permissions")
@@ -116,46 +85,4 @@ public class SecondScreen extends AppCompatActivity {
                 .check();
     }
 
-
-//    private void KiemTraCheck() {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && Environment.isExternalStorageManager()) {
-//            Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
-//            Uri uri = Uri.fromParts("package", getPackageName(), null);
-//            intent.setData(uri);
-//            startActivityForResult(intent, REQUEST_CODE_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-//        } else {
-//
-//        }
-//    }
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == REQUEST_CODE_MANAGE_ALL_FILES_ACCESS_PERMISSION) {
-//            check();
-//        }
-//
-//    }
-//
-//    private void check() {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && Environment.isExternalStorageManager()) {
-//            File file = new File(Environment.getExternalStorageDirectory(), "ten_file.txt");
-//            try {
-//                FileInputStream inputStream = new FileInputStream(file);
-//                InputStreamReader reader = new InputStreamReader(inputStream);
-//                BufferedReader bufferedReader = new BufferedReader(reader);
-//                String line = bufferedReader.readLine();
-//                while (line != null) {
-//                    line = bufferedReader.readLine();
-//                }
-//                bufferedReader.close();
-//                reader.close();
-//                inputStream.close();
-//            } catch (IOException e) {
-//
-//            }
-//        } else {
-//            Toast.makeText(this, "//Permission is not enabled, you cannot access the memory ", Toast.LENGTH_SHORT).show();
-//        }
-//    }
 }
