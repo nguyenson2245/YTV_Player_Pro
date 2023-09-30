@@ -33,7 +33,6 @@ class Privacy_Fragment : Fragment() {
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
-
         if (item.itemId == R.id.home) {
             requireActivity().supportFragmentManager.popBackStack(
                 null,

@@ -50,7 +50,6 @@ class Contact_Fragment : Fragment() {
         return view
     }
 
-
     override fun onContextItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == R.id.home) {
@@ -63,10 +62,6 @@ class Contact_Fragment : Fragment() {
             return true
         }
         return super.onContextItemSelected(item)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
     }
 
 }

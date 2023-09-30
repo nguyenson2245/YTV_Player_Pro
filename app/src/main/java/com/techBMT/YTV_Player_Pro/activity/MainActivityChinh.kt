@@ -146,7 +146,7 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
                 finish()
                 return
             } else {
-                Toast.makeText(this, "Press back again to exit the application", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Press back again to exit the application", Toast.LENGTH_SHORT)
                 toatm?.show()
             }
             backPressedTime = System.currentTimeMillis()

@@ -33,9 +33,9 @@ class MyDatabaseHelper(private val context: Context?) :
         cv.put(COLUMN_USERAGENT, user)
         val result = db.insert(TABLE_NAME, null, cv)
         if (result == -1L) {
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -57,9 +57,9 @@ class MyDatabaseHelper(private val context: Context?) :
         cv.put(COLUMN_USERAGENT, user)
         val result = db.update(TABLE_NAME, cv, "_id=?", arrayOf(row_id)).toLong()
         if (result == -1L) {
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -67,9 +67,9 @@ class MyDatabaseHelper(private val context: Context?) :
         val db = this.writableDatabase
         val result = db.delete(TABLE_NAME, "_id=?", arrayOf(row_id)).toLong()
         if (result == -1L) {
-            Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show()
         }
     }
 

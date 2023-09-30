@@ -35,7 +35,6 @@ class Rate_Fragment : Fragment() {
         return view
     }
 
-
     private fun openAppRating() {
         val packageName = requireContext().packageName
         val marketUri = Uri.parse("market://details?id=$packageName")
@@ -52,7 +51,6 @@ class Rate_Fragment : Fragment() {
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
-
         if (item.itemId == R.id.home) {
             requireActivity().supportFragmentManager.popBackStack(
                 null,
@@ -65,19 +63,5 @@ class Rate_Fragment : Fragment() {
         return super.onContextItemSelected(item)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        Log.d("TAGRate", "onDestroyViewRate: ")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("TAGRate", "onDestroyRate: ")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("TAGRate", "onPauseViewRate: ")
-    }
 
 }
