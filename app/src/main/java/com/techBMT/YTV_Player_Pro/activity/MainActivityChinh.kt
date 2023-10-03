@@ -95,7 +95,7 @@ class MainActivityChinh : AppCompatActivity(), NavigationView.OnNavigationItemSe
         return true
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: Fragment)     {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout, fragment)
         val backStackEntryCount = supportFragmentManager.backStackEntryCount

@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.techBMT.YTV_Player_Pro.R
-import com.techBMT.YTV_Player_Pro.activity2file.dataBase.MyDatabaseHelper
+import com.techBMT.YTV_Player_Pro.dataBase.MyDatabaseHelper
 
 class AddActivity : AppCompatActivity() {
 

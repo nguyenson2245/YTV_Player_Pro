@@ -1,4 +1,4 @@
-package com.techBMT.YTV_Player_Pro.activity2file.dataBase
+package com.techBMT.YTV_Player_Pro.dataBase
 
 import android.content.ContentValues
 import android.content.Context

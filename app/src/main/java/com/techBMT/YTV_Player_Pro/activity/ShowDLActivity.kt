@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.techBMT.YTV_Player_Pro.R
 import com.techBMT.YTV_Player_Pro.adapter_tv.CustomAdapter
-import com.techBMT.YTV_Player_Pro.activity2file.dataBase.MyDatabaseHelper
+import com.techBMT.YTV_Player_Pro.dataBase.MyDatabaseHelper
 
 class ShowDLActivity : AppCompatActivity() {
 

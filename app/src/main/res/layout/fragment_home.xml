@@ -7,13 +7,13 @@
              tools:context=".fragment.Home_Fragment">
 
     <LinearLayout
-        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         android:padding="3dp"
-        android:weightSum="3">
+        android:weightSum="4">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="265dp"
             android:layout_margin="15dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="@drawable/sendmail_bg"
             android:gravity="center">
 
@@ -56,38 +56,46 @@
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutclick_relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
+            android:layout_weight="2"
             android:background="@drawable/sendmail_bg"
-            android:layout_weight="1"
             android:gravity="center">
+
+            <!-- Văn bản -->
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/video1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="84dp"
                 android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
                 app:lottie_rawRes="@raw/animation_lmhuhppw" />
 
-            <!-- Văn bản -->
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/video1"
+                android:layout_marginTop="4dp"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:gravity="center"
                 android:text="ONLINE VIDEOS ->"
                 android:textColor="#B90000"
                 android:textSize="18sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/video1"
+                tools:layout_editor_absoluteX="0dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
